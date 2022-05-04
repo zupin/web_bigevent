@@ -40,16 +40,19 @@ $(function() {
   
   // 从layUI上获取layer对象
   var layer = layui.layer;
-  var data = {
+  /* var data = {
     username: $('#form_reg [name=username]').val(),
     password: $('#form_reg [name=password]').val()
-  };
+  }; */
   // 监听注册表单的点击事件
   $('#form_reg').on('submit', function(e) {
     // 1、阻止表单默认提交行为
     e.preventDefault();
     // 2、发起Ajax的post请求
-    $.post('/api/reguser', data, function(res) {
+    $.post('/api/reguser',{
+        username: $('#form_reg [name=username]').val(),
+        password: $('#form_reg [name=password]').val()
+      }, function(res) {
       // console.log(res);
       if (res.status !== 0) {
         // 注册失败
