@@ -41,7 +41,7 @@ function getUserInfo() {
       renderAvatar(res.data);
     },
     // 不论成功失败，最终都会调用 complete 回调函数
-    complete: function(res) {
+    /* complete: function(res) {
       // console.log('执行了complete 回调');
       console.log(res.responseJSON); // {status: 1, message: '身份认证失败！'}
       // 在 complete 回调函数中，可以使用res.responseJSON 拿到服务器响应回来的数据
@@ -51,8 +51,7 @@ function getUserInfo() {
         // 2、强制跳转到登录界面
         location.href = '/login.html';
       }
-
-    }
+    } */
 
   });
 }
